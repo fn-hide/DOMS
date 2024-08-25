@@ -1,3 +1,5 @@
+
+// dark mode toggle
 const themeSwitch = document.getElementById("theme-switch"); //our switch element
 const themeIndicator = document.getElementById("theme-indicator"); //our theme icon
 const page = document.body; //our document body
@@ -10,7 +12,6 @@ const indicators = ["icon-moon", "icon-sun"]
 
 //Now we check our local storage and get the value of our theme.
 let currentTheme = localStorage.getItem("theme");
-
 //This is a helper function to set the theme.
 //We will pass in the index of our array.
 function setTheme(theme) {
@@ -30,13 +31,21 @@ function setIndicator(theme) {
 //This is a helper function to set the page theme class.
 //We will pass in the index of our array.
 function setPage(theme) {
+    // debugger
     //We will remove the existing classes,
     // and then we will add our current theme class.
+    document.querySelector('head').insertAdjacentHTML("beforeend", '<link rel="stylesheet" class="layout-css" href="">');
     if (theme === 1){
-        page.classList.add("dark")
-    }else{
-        page.classList.remove("dark")
+        // page.classList.add("dark")
+        // document.body.className = 'dark';
+        
+        document.querySelector(".pcoded-navbar").classList.add("navbar-dark");
+        document.querySelector(".layout-css").setAttribute('href', 'https://appsrv1-147a1.kxcdn.com/datta-able-enh-flask-v1.0.18/css/layouts/dark.css');
     }
+    if (theme === 0){
+        document.querySelector(".layout-css").setAttribute('href', '');
+    }
+
 
 }
 
@@ -58,15 +67,19 @@ if (currentTheme === themeStates[1]) {
     themeSwitch.checked = false;
 }
 
-//We handle our user interaction here.
-themeSwitch.addEventListener('change', function () {
+function changeMode(n){
+    setTheme(n)
+    setIndicator(n)
+    setPage(n)
+    return
+}
+
+ //We handle our user interaction here.
+ themeSwitch.addEventListener('change', function() {
+    
     if (this.checked) {
-        setTheme(0)
-        setIndicator(0)
-        setPage(0)
+        changeMode(0)
     } else {
-        setTheme(1)
-        setIndicator(1)
-        setPage(1)
+        changeMode(1)
     }
 });
