@@ -1,0 +1,135 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Products</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Products</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Products</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <button type="button" class="btn btn-primary"><i class="feather icon-plus"></i>Add Product</button>
+                                        </div>
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                                                    <div class="dataTable-top">
+                                                        <div class="dataTable-dropdown"><label><select
+                                                                class="dataTable-selector">
+                                                            <option value="5">5</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                            <option value="25" selected="">25</option>
+                                                        </select> entries per page</label></div>
+                                                        <div class="dataTable-search"><input class="dataTable-input"
+                                                                                             placeholder="Search..."
+                                                                                             type="text"></div>
+                                                    </div>
+                                                    <div class="dataTable-container">
+                                                        <table class="table dataTable-table"
+                                                               id="pc-dt-render-column-cells">
+                                                            <thead>
+                                                            <tr>
+                                                                <th data-sortable="" style="width: 27.0765%;"><a
+                                                                        href="#" class="dataTable-sorter">Drink</a></th>
+                                                                <th data-sortable="" style="width: 34.2054%;"><a
+                                                                        href="#" class="dataTable-sorter">Price</a></th>
+                                                                <th data-sortable="" style="width: 24.395%;"><a href="#"
+                                                                                                                class="dataTable-sorter">Caffeinated</a>
+                                                                </th>
+                                                                <th data-sortable="" style="width: 14.3231%;"><a
+                                                                        href="#" class="dataTable-sorter">Profit</a>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr class="text-danger">
+                                                                <td>🔥 latte</td>
+                                                                <td>4
+                                                                    <button class="btn btn-success btn-sm ms-3"
+                                                                            data-row="0">Buy Now
+                                                                    </button>
+                                                                </td>
+                                                                <td><b>No</b></td>
+                                                                <td><span class="text-body">0</span></td>
+                                                            </tr>
+                                                            <tr class="text-danger">
+                                                                <td>🌿 herbal tea</td>
+                                                                <td>3
+                                                                    <button class="btn btn-success btn-sm ms-3"
+                                                                            data-row="1">Buy Now
+                                                                    </button>
+                                                                </td>
+                                                                <td><b>No</b></td>
+                                                                <td><span class="text-success">0.56</span></td>
+                                                            </tr>
+                                                            <tr class="text-success">
+                                                                <td>🌿 green tea</td>
+                                                                <td>3
+                                                                    <button class="btn btn-success btn-sm ms-3"
+                                                                            data-row="2">Buy Now
+                                                                    </button>
+                                                                </td>
+                                                                <td><b>Yes</b></td>
+                                                                <td><span class="text-success">1.72</span></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="dataTable-bottom">
+                                                        <div class="dataTable-info">Showing 1 to 25 of 25 entries</div>
+                                                        <nav class="dataTable-pagination">
+                                                            <ul class="dataTable-pagination-list"></ul>
+                                                        </nav>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
